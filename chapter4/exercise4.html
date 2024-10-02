@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Shape(type) {
+            this.type = type;
+        }
+
+        Shape.prototype.getType = function () {
+            return this.type;
+        };
+
+        function Circle(radius) {
+            Shape.call(this, 'Circle');
+            this.radius = radius;
+        }
+
+        Circle.prototype = Object.create(Shape.prototype);
+        Circle.prototype.constructor = Circle;
+
+        Circle.prototype.getArea = function () {
+            return Math.PI * Math.pow(this.radius, 2);
+        };
+
+        let circle = new Circle(5);
+        console.log("Type: " + circle.getType()); // Output: Type: Circle
+        console.log("Area: " + circle.getArea()); // Output: Area: 78.53981633974483
+
+
+    </script>
+</body>
+
+</html>

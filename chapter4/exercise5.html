@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        Date.prototype.formatDate = function () {
+            let day = this.getDate().toString().padStart(2, '0');
+            let month = (this.getMonth() + 1).toString().padStart(2, '0');
+            let year = this.getFullYear();
+            return day + "/" + month + "/" + year;
+        };
+
+        let today = new Date();
+        console.log(today.formatDate()); // Output: e.g., 09/08/2024
+
+
+    </script>
+</body>
+
+</html>

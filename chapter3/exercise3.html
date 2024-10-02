@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class BankAccount {
+            constructor(accountNumber, accountHolder, balance) {
+                this.accountNumber = accountNumber;
+                this.accountHolder = accountHolder;
+                this.balance = balance;
+            }
+
+            deposit(amount) {
+                this.balance += amount;
+                console.log("Deposited: " + amount);
+            }
+
+            withdraw(amount) {
+                if (amount > this.balance) {
+                    console.log("Insufficient balance!");
+                } else {
+                    this.balance -= amount;
+                    console.log("Withdrew: " + amount);
+                }
+            }
+
+            displayBalance() {
+                console.log("Balance: " + this.balance);
+            }
+        }
+
+        let account = new BankAccount("123456", "John Doe", 500);
+        account.deposit(100);
+        account.withdraw(50);
+        account.displayBalance(); // Output: Balance: 550
+
+
+    </script>
+</body>
+
+</html>

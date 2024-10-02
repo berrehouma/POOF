@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Vehicle {
+            constructor(make, year) {
+                this.make = make;
+                this.year = year;
+            }
+
+            displayInfo() {
+                console.log("Vehicle: " + this.make + " (" + this.year + ")");
+            }
+        }
+
+        class ElectricVehicle extends Vehicle {
+            constructor(make, year, batteryCapacity) {
+                super(make, year);
+                this.batteryCapacity = batteryCapacity;
+            }
+
+            displayInfo() {
+                super.displayInfo();
+                console.log("Battery Capacity: " + this.batteryCapacity + " kWh");
+            }
+        }
+
+        let tesla = new ElectricVehicle("Tesla", 2021, 100);
+        tesla.displayInfo();
+        // Output: Vehicle: Tesla (2021)
+        //         Battery Capacity: 100 kWh
+
+
+    </script>
+</body>
+
+</html>
